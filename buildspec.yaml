@@ -10,12 +10,9 @@ phases:
       - echo Build phase complete. You can add tests here if needed.
   post_build:
     commands:
-      - echo Creating build_output directory...
+      - echo Preparing deployment artifacts...
       - mkdir -p build_output
-      - echo Listing current directory contents...
-      - ls -la
-      - echo Copying files to build_output...
-      - cp -r ./* build_output/
+      - cp -r * build_output/
 
 artifacts:
   files:
