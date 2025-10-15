@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Node.js dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build phase complete. You can add tests here if needed.
+  post_build:
+    commands:
+      - echo Preparing deployment artifacts...
+      - mkdir -p build_output
+      - cp -r * build_output/
+
+artifacts:
+  files:
+    - build_output/**/*
+
+cache:
+  paths:
+    - node_modules/**/*
